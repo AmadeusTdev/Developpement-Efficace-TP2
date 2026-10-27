@@ -42,5 +42,12 @@ public class questions {
 		System.out.println("Chaine après inversement: " + chain2);
 		chain2.algorithme_swapNode(4, 2);
 		System.out.println("Chaine après inversement: " + chain2);
+
+		// Chaîne doublement chainée
+		DoublyListClass chain3 = new DoublyListClass();
+		chain3.addLast(3);
+		chain3.addLast(9);
+		chain3.addFirst(2);
+		System.out.println("Chaine doublement chaînée: " + chain3);
 	}
 }
