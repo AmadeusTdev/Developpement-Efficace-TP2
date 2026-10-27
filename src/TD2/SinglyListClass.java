@@ -161,6 +161,66 @@ public class SinglyListClass {
 	}
 	
 	// Question 1.2 - 3
-	
+	public void algorithme_swapNode(int valX, int valY) {
+		if (head != null) {
+			// On cherche le premier node de valeur valX
+			Node nodeX = null;
+			Node currX = head;
+			Node predX = null; // Le prédecesseur de currX
+			while (nodeX == null && currX != null) {
+				if (currX.getElement() == valX) {
+					nodeX = currX; // On a trouvé le bon node
+				} else {
+					predX = currX;
+					currX = currX.getNext(); // node suivant
+				}
+			}
+
+			// On cherche le premier node de valeur valY
+			Node nodeY = null;
+			Node currY = head;
+			Node predY = null; // Le prédecesseur de currY
+			while (nodeY == null && currY != null) {
+				if (currY.getElement() == valY) {
+					nodeY = currY; // On a trouvé le bon node
+				} else {
+					predY = currY;
+					currY = currY.getNext(); // node suivant
+				}
+			}
+
+			// Si on à trouvé les deux nodes alors on les échanges
+			if (nodeX != null && nodeY != null) {
+				// Si les nodes sont côte à côte
+				if (nodeX.getNext() == nodeY) {
+					// On est dans le cas predX -> nodeX -> nodeY
+					nodeX.setNext(nodeY.getNext());
+					nodeY.setNext(nodeX);
+					predX.setNext(nodeY);
+
+				} else if (nodeY.getNext() == nodeX) {
+					// On est dans le cas predY -> nodeY -> nodeX
+					nodeY.setNext(nodeX.getNext());
+					nodeX.setNext(nodeY);
+					predY.setNext(nodeX);
+
+				} else {
+
+					// Sinon on échange simplement les next des nodes que l'on échange et des nodes précédentes
+					// On a donc predX -> nodeX    et    predY -> nodeY
+					if (predX != null) { // Au cas ou nodeX est le head
+						predX.setNext(nodeY);
+					}
+					if (predY != null) { // Au cas ou nodeY est le head
+						predY.setNext(nodeX);
+					}
+					
+					Node tmp = nodeX.getNext();
+					nodeX.setNext(nodeY.getNext());
+					nodeY.setNext(tmp);
+				}
+			}
+		}
+	}
 	
 }

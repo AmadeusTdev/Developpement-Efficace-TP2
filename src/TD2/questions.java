@@ -27,5 +27,20 @@ public class questions {
 		System.out.println("premier noeud (enlever): " + chain.removeFirst()); // 4
 		System.out.println("premier noeud (enlever): " + chain.removeFirst()); // 9
 		System.out.println("taille: " + chain.size()); // taille 3
+
+		// Algorithme d'échange
+		SinglyListClass chain2 = new SinglyListClass();
+		chain2.addLast(4);
+		chain2.addLast(9);
+		chain2.addLast(1);
+		chain2.addFirst(8);
+		chain2.addLast(5);
+		chain2.addLast(2);
+
+		System.out.println("Chaine avant inversement: " + chain2);
+		chain2.algorithme_swapNode(9, 1);
+		System.out.println("Chaine après inversement: " + chain2);
+		chain2.algorithme_swapNode(4, 2);
+		System.out.println("Chaine après inversement: " + chain2);
 	}
 }
