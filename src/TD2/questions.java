@@ -71,5 +71,15 @@ public class questions {
 
 		System.out.println("Chaîne 3 et 4 doublement chaînées equals: " + chain3.equals(chain4));
 		System.out.println("Chaîne 3 et 5 doublement chaînées equals: " + chain3.equals(chain5));
+
+		// MyLinkedList
+        MyLinkedList<String> chain6 = new MyLinkedList<>();
+        chain6.add("joe");
+		chain6.add("bob");
+		chain6.add(1, "albert");
+		chain6.addFirst("fredkin");
+		chain6.addLast("pascal");
+
+		System.out.println("MyLinkedList: " + chain6);
 	}
 }
