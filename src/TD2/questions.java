@@ -49,5 +49,27 @@ public class questions {
 		chain3.addLast(9);
 		chain3.addFirst(2);
 		System.out.println("Chaine doublement chaînée: " + chain3);
+
+		// Liste circulaire
+		CircularList myCircularList = new CircularList();
+		myCircularList.addFirst(3);
+		myCircularList.addFirst(8);
+		myCircularList.addFirst(2);
+
+		System.out.println("Circular list: " + myCircularList);
+
+		// DoublyListClass equals
+		DoublyListClass chain4 = new DoublyListClass();
+		chain4.addLast(3);
+		chain4.addLast(9);
+		chain4.addFirst(2);
+
+		DoublyListClass chain5 = new DoublyListClass();
+		chain5.addLast(3);
+		chain5.addLast(4);
+		chain5.addFirst(2);
+
+		System.out.println("Chaîne 3 et 4 doublement chaînées equals: " + chain3.equals(chain4));
+		System.out.println("Chaîne 3 et 5 doublement chaînées equals: " + chain3.equals(chain5));
 	}
 }

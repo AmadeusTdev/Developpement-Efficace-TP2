@@ -145,4 +145,18 @@ public class DoublyListClass {
 		}
 	}
 	
+	@Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DoublyListClass other = (DoublyListClass) o;
+        if (size != other.size) return false;
+        Node a = head, b = other.head;
+        while (a != null) {
+            if (!a.getElement().equals(b.getElement())) return false;
+            a = a.getNext();
+            b = b.getNext();
+        }
+        return true;
+    }
 }
